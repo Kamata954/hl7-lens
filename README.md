@@ -4,19 +4,6 @@
 A small HL7 v2 message explorer using plain HTML, CSS and JavaScript.
 Paste a message, select a segment, then expand a field to see its components.
 
-## Run locally
-
-From this project's folder:
-
-```sh
-python3 -m http.server 8000 --directory dist
-```
-
-Open http://localhost:8000. VS Code's Live Server also works.
-JavaScript now uses `import`, so serve the files over HTTP rather than opening
-`index.html` by double-clicking it. No build, dependencies or API keys are needed.
-For GitHub Pages, publish the contents of `dist/` together.
-
 
 ## Scope
 
