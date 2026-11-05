@@ -1,5 +1,5 @@
 # HL7 Lens
-[main page](hl7-lens-mainpage.png)
+[main page](./hl7-lens-mainpage.png)
 
 A small HL7 v2 message explorer using plain HTML, CSS and JavaScript.
 Paste a message, select a segment, then expand a field to see its components.
