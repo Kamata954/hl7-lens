@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HL7 Lens</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <main>
+        <h1>HL7 Lens</h1>
+        <p>Paste an HL7 v2 message to explore its segments and fields.</p>
+
+        <label for="input">HL7 message</label>
+        <textarea id="input" spellcheck="false" placeholder="MSH|^~\&|..."></textarea>
+        <div class="toolbar">
+            <button id="parse" class="primary">Parse message</button>
+            <button id="clear">Clear</button>
+            <label class="file-label">Open file <input id="file" type="file" accept=".hl7,.txt"></label>
+            <span>Examples:</span>
+            <button data-example="adt">ADT</button>
+            <button data-example="oru">ORU</button>
+            <button data-example="ack">ACK</button>
+        </div>
+        <p id="status" role="status"></p>
+        <p id="error" role="alert" hidden></p>
+
+        <section id="results" hidden>
+            <label for="message">Message</label>
+            <select id="message"></select>
+            <p id="warnings"></p>
+            <div class="explorer">
+                <nav id="segments" aria-label="Segments"></nav>
+                <div class="fields">
+                    <h2 id="segment-title"></h2>
+                    <p>Click a field to inspect its components.</p>
+                    <div class="toolbar">
+                        <input id="search" type="search" placeholder="Search fields" aria-label="Search fields">
+                        <label><input id="empty" type="checkbox"> Show empty fields</label>
+                    </div>
+                    <div class="field-grid heading">
+                        <span>Field</span><span>Description</span><span>Value</span>
+                    </div>
+                    <div id="field-list"></div>
+                </div>
+            </div>
+            <details class="json-panel">
+                <summary>JSON output</summary>
+                <button id="download">Download JSON</button>
+                <pre id="json"></pre>
+            </details>
+        </section>
+
+        <footer>
+            Messages stay in your browser. Use synthetic data for demos.
+            This tool explores message structure; it does not validate HL7 conformance.
+        </footer>
+    </main>
+</body>
+</html>
